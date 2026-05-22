@@ -1,0 +1,342 @@
+# Clipboard History NVDA Add-on
+# French translation
+# Copyright (C) 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: clipboardHistory 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: French\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Clipboard History"
+msgstr "Historique du presse-papiers"
+
+msgid "Set Group"
+msgstr "Définir le groupe"
+
+msgid "Select an &existing group:"
+msgstr "Sélectionner un groupe &existant :"
+
+msgid "Or type a &new group name:"
+msgstr "Ou saisir un &nouveau nom de groupe :"
+
+msgid "&Remove from group"
+msgstr "&Retirer du groupe"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Manage Groups"
+msgstr "Gérer les groupes"
+
+msgid "&Groups:"
+msgstr "&Groupes :"
+
+msgid "&New"
+msgstr "&Nouveau"
+
+msgid "&Rename"
+msgstr "&Renommer"
+
+msgid "&Delete"
+msgstr "&Supprimer"
+
+msgid "&Close"
+msgstr "&Fermer"
+
+msgid "Enter a name for the new group:"
+msgstr "Entrez un nom pour le nouveau groupe :"
+
+msgid "New Group"
+msgstr "Nouveau groupe"
+
+msgid "Group name cannot be empty"
+msgstr "Le nom du groupe ne peut pas être vide"
+
+msgid "Group created: %s"
+msgstr "Groupe créé : %s"
+
+msgid "Group '%s' already exists"
+msgstr "Le groupe « %s » existe déjà"
+
+msgid "Select a group first"
+msgstr "Sélectionnez d'abord un groupe"
+
+msgid "New name for '%s':"
+msgstr "Nouveau nom pour « %s » :"
+
+msgid "Rename Group"
+msgstr "Renommer le groupe"
+
+msgid "Renamed to: %s"
+msgstr "Renommé en : %s"
+
+msgid "Delete group '%s'? Clips in this group will be unassigned but not deleted."
+msgstr "Supprimer le groupe « %s » ? Les éléments de ce groupe seront désaffectés mais pas supprimés."
+
+msgid "Delete Group"
+msgstr "Supprimer le groupe"
+
+msgid "Group '%s' deleted"
+msgstr "Groupe « %s » supprimé"
+
+msgid "&Search:"
+msgstr "&Rechercher :"
+
+msgid "Gro&up:"
+msgstr "Gro&upe :"
+
+msgid "All"
+msgstr "Tous"
+
+msgid "Clip"
+msgstr "Élément"
+
+msgid "Group"
+msgstr "Groupe"
+
+msgid "Pinned"
+msgstr "Épinglé"
+
+msgid "&Preview:"
+msgstr "&Aperçu :"
+
+msgid "&Paste"
+msgstr "Co&ller"
+
+msgid "&Copy to Clipboard"
+msgstr "&Copier dans le presse-papiers"
+
+msgid "Pi&n / Unpin"
+msgstr "Épi&ngler / Désépingler"
+
+msgid "Set &Group"
+msgstr "Définir le &groupe"
+
+msgid "C&lear All"
+msgstr "&Tout effacer"
+
+msgid "Ne&w Group"
+msgstr "No&uveau groupe"
+
+msgid "&Manage Groups"
+msgstr "&Gérer les groupes"
+
+msgid "Cl&ose"
+msgstr "Fe&rmer"
+
+msgid "Pasted: "
+msgstr "Collé : "
+
+msgid "Yes"
+msgstr "Oui"
+
+msgid "%d results found"
+msgstr "%d résultats trouvés"
+
+msgid "Copied to clipboard"
+msgstr "Copié dans le presse-papiers"
+
+msgid "%d items copied to clipboard"
+msgstr "%d éléments copiés dans le presse-papiers"
+
+msgid "Unpinned"
+msgstr "Désépinglé"
+
+msgid "%d items toggled"
+msgstr "%d éléments basculés"
+
+msgid "%d item(s) added to group: %s"
+msgstr "%d élément(s) ajouté(s) au groupe : %s"
+
+msgid "%d item(s) removed from group"
+msgstr "%d élément(s) retiré(s) du groupe"
+
+msgid "Deleted"
+msgstr "Supprimé"
+
+msgid "%d items deleted"
+msgstr "%d éléments supprimés"
+
+msgid "Are you sure you want to clear all clipboard history? Pinned items will also be removed."
+msgstr "Êtes-vous sûr de vouloir effacer tout l'historique du presse-papiers ? Les éléments épinglés seront également supprimés."
+
+msgid "Clear Clipboard History"
+msgstr "Effacer l'historique du presse-papiers"
+
+msgid "History cleared"
+msgstr "Historique effacé"
+
+msgid "Paste"
+msgstr "Coller"
+
+msgid "Copy to Clipboard"
+msgstr "Copier dans le presse-papiers"
+
+msgid "Text File (.txt)..."
+msgstr "Fichier texte (.txt)..."
+
+msgid "Word Document (.docx)..."
+msgstr "Document Word (.docx)..."
+
+msgid "Save As"
+msgstr "Enregistrer sous"
+
+msgid "Top"
+msgstr "Haut"
+
+msgid "Bottom"
+msgstr "Bas"
+
+msgid "Move To"
+msgstr "Déplacer vers"
+
+msgid "Unpin"
+msgstr "Désépingler"
+
+msgid "Pin"
+msgstr "Épingler"
+
+msgid "Set Group"
+msgstr "Définir le groupe"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Save as Text File"
+msgstr "Enregistrer comme fichier texte"
+
+msgid "Text files (*.txt)|*.txt"
+msgstr "Fichiers texte (*.txt)|*.txt"
+
+msgid "Saved as text file"
+msgstr "Enregistré comme fichier texte"
+
+msgid "Failed to save file"
+msgstr "Échec de l'enregistrement du fichier"
+
+msgid "Save as Word Document"
+msgstr "Enregistrer comme document Word"
+
+msgid "Word documents (*.docx)|*.docx"
+msgstr "Documents Word (*.docx)|*.docx"
+
+msgid "Saved as Word document"
+msgstr "Enregistré comme document Word"
+
+msgid "Failed to save Word document"
+msgstr "Échec de l'enregistrement du document Word"
+
+msgid "top"
+msgstr "haut"
+
+msgid "bottom"
+msgstr "bas"
+
+msgid "Moved to %s"
+msgstr "Déplacé vers %s"
+
+msgid "&Maximum number of history entries:"
+msgstr "Nombre &maximum d'entrées dans l'historique :"
+
+msgid "&Save history between NVDA sessions"
+msgstr "&Sauvegarder l'historique entre les sessions NVDA"
+
+msgid "&Announce when new text is copied"
+msgstr "&Annoncer lorsqu'un nouveau texte est copié"
+
+msgid "Clipboard: %s"
+msgstr "Presse-papiers : %s"
+
+msgid "Show the clipboard history dialog to browse, search and paste previous clipboard entries"
+msgstr "Afficher le dialogue d'historique du presse-papiers pour parcourir, rechercher et coller les entrées précédentes"
+
+msgid "Clipboard history is empty"
+msgstr "L'historique du presse-papiers est vide"
+
+msgid "Navigate to the previous item in clipboard history and announce it"
+msgstr "Naviguer vers l'élément précédent dans l'historique du presse-papiers et l'annoncer"
+
+msgid "End of clipboard history"
+msgstr "Fin de l'historique du presse-papiers"
+
+msgid "%d of %d: %s"
+msgstr "%d sur %d : %s"
+
+msgid "Navigate to the next item in clipboard history and announce it"
+msgstr "Naviguer vers l'élément suivant dans l'historique du presse-papiers et l'annoncer"
+
+msgid "Beginning of clipboard history"
+msgstr "Début de l'historique du presse-papiers"
+
+msgid "Paste the currently navigated clipboard history entry"
+msgstr "Coller l'entrée actuellement sélectionnée dans l'historique du presse-papiers"
+
+msgid "Failed to paste"
+msgstr "Échec du collage"
+
+msgid "Copy the currently navigated clipboard history entry to the clipboard without pasting"
+msgstr "Copier l'entrée actuellement sélectionnée dans le presse-papiers sans coller"
+
+msgid "Failed to copy"
+msgstr "Échec de la copie"
+
+msgid "Delete the currently navigated clipboard history entry"
+msgstr "Supprimer l'entrée actuellement sélectionnée dans l'historique du presse-papiers"
+
+msgid "Pin or unpin the currently navigated clipboard history entry"
+msgstr "Épingler ou désépingler l'entrée actuellement sélectionnée dans l'historique"
+
+msgid "Clear all unpinned entries from clipboard history"
+msgstr "Effacer toutes les entrées non épinglées de l'historique du presse-papiers"
+
+msgid "Clipboard history is already empty"
+msgstr "L'historique du presse-papiers est déjà vide"
+
+msgid "Clipboard history cleared. Pinned items kept."
+msgstr "Historique du presse-papiers effacé. Les éléments épinglés sont conservés."
+
+msgid "Announce the current clipboard content"
+msgstr "Annoncer le contenu actuel du presse-papiers"
+
+msgid "Clipboard is empty"
+msgstr "Le presse-papiers est vide"
+
+msgid "Set or change the group for the currently navigated clipboard entry"
+msgstr "Définir ou modifier le groupe pour l'entrée actuellement sélectionnée"
+
+msgid "Added to group: %s"
+msgstr "Ajouté au groupe : %s"
+
+msgid "Removed from group"
+msgstr "Retiré du groupe"
+
+msgid "Append selected text to the latest clipboard entry"
+msgstr "Ajouter le texte sélectionné à la dernière entrée du presse-papiers"
+
+msgid "No text selected"
+msgstr "Aucun texte sélectionné"
+
+msgid "Appended"
+msgstr "Ajouté"
+
+msgid "Files and Folders"
+msgstr "Fichiers et dossiers"
+
+msgid "Links"
+msgstr "Liens"
+
+msgid "Emails"
+msgstr "E-mails"
+
+msgid "%d files: %s"
+msgstr "%d fichiers : %s"

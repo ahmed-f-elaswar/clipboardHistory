@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clipboard History Manager</title>
+</head>
+<body>
+<h1>Gestor de historial del portapapeles</h1>
+<p>Un gestor de historial del portapapeles para NVDA inspirado en Ditto.</p>
+<p>Realiza un seguimiento de todo lo que copias — texto, archivos, enlaces y correos electrónicos — con monitorización instantánea del portapapeles basada en eventos.</p>
+<h2>Características</h2>
+<ul>
+<li><strong>Monitorización instantánea del portapapeles</strong> usando el listener de portapapeles de Windows (basado en eventos, sin sondeo periódico).</li>
+<li><strong>Soporte de archivos</strong>: Los archivos copiados en el Explorador aparecen en el historial y se pegan como archivos reales (formato CF_HDROP).</li>
+<li><strong>Agrupación automática</strong>: Las entradas se clasifican automáticamente como Archivos y carpetas, Enlaces o Correos electrónicos.</li>
+<li><strong>Búsqueda y filtrado</strong>: Búsqueda de texto completo y filtro por grupo en el diálogo del historial.</li>
+<li><strong>Fijar entradas importantes</strong> para que nunca se eliminen al alcanzar el límite.</li>
+<li><strong>Selección múltiple y pegado</strong>: Selecciona múltiples entradas con Ctrl+Espacio y pégalas en el orden de selección.</li>
+<li><strong>Añadir al portapapeles</strong>: Añade el texto seleccionado al contenido actual del portapapeles.</li>
+<li><strong>Reordenar entradas</strong>: Mueve las entradas arriba/abajo con Shift+Flechas, o al principio/final mediante el menú contextual.</li>
+<li><strong>Guardar entradas</strong>: Guarda cualquier entrada como archivo de texto (.txt) o documento Word (.docx) desde el menú contextual.</li>
+<li><strong>Indicador de pegado</strong>: Las entradas que han sido pegadas se marcan con "Pasted:" en la lista.</li>
+<li><strong>Pegado combinado</strong>: Cuando se pegan múltiples entradas juntas, el texto combinado también se guarda como nueva entrada.</li>
+<li><strong>Historial persistente</strong>: El historial se guarda entre sesiones de NVDA (configurable).</li>
+<li><strong>Grupos personalizados</strong>: Crea y gestiona grupos personalizados para organizar las entradas.</li>
+<li><strong>Configurable</strong>: Panel de ajustes en Preferencias de NVDA para el máximo de entradas, persistencia y anuncios.</li>
+</ul>
+<h2>Atajos de teclado globales</h2>
+<table>
+<thead>
+<tr>
+<th>Atajo</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVDA+A</td>
+<td>Abrir el diálogo del historial del portapapeles</td>
+</tr>
+<tr>
+<td>NVDA+C</td>
+<td>Anunciar el contenido actual del portapapeles</td>
+</tr>
+<tr>
+<td>NVDA+Shift+A</td>
+<td>Añadir texto seleccionado a la última entrada</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Flecha arriba</td>
+<td>Navegar a la entrada anterior</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Flecha abajo</td>
+<td>Navegar a la entrada siguiente</td>
+</tr>
+<tr>
+<td>NVDA+Alt+V</td>
+<td>Pegar la entrada seleccionada actualmente</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Intro</td>
+<td>Copiar la entrada al portapapeles</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Suprimir</td>
+<td>Eliminar la entrada seleccionada actualmente</td>
+</tr>
+<tr>
+<td>NVDA+Alt+P</td>
+<td>Fijar/desfijar la entrada</td>
+</tr>
+<tr>
+<td>NVDA+Alt+X</td>
+<td>Borrar todo el historial</td>
+</tr>
+<tr>
+<td>NVDA+Alt+G</td>
+<td>Establecer grupo para la entrada</td>
+</tr>
+</tbody>
+</table>
+<h2>Atajos de teclado en el diálogo</h2>
+<p>Cuando el diálogo del historial está abierto:</p>
+<table>
+<thead>
+<tr>
+<th>Atajo</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intro</td>
+<td>Pegar la(s) entrada(s) seleccionada(s)</td>
+</tr>
+<tr>
+<td>Ctrl+Espacio</td>
+<td>Alternar selección múltiple (respeta el orden)</td>
+</tr>
+<tr>
+<td>Suprimir</td>
+<td>Eliminar la(s) entrada(s) seleccionada(s)</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Fijar/desfijar</td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>Establecer grupo</td>
+</tr>
+<tr>
+<td>Shift+Flecha arriba</td>
+<td>Mover entrada hacia arriba</td>
+</tr>
+<tr>
+<td>Shift+Flecha abajo</td>
+<td>Mover entrada hacia abajo</td>
+</tr>
+<tr>
+<td>Tecla Aplicaciones</td>
+<td>Abrir menú contextual</td>
+</tr>
+<tr>
+<td>Alt+S</td>
+<td>Enfocar campo de búsqueda</td>
+</tr>
+<tr>
+<td>Alt+U</td>
+<td>Enfocar filtro de grupo</td>
+</tr>
+<tr>
+<td>Alt+G</td>
+<td>Botón establecer grupo</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Cerrar diálogo</td>
+</tr>
+</tbody>
+</table>
+<h2>Opciones del menú contextual</h2>
+<p>Clic derecho o tecla Aplicaciones en cualquier entrada:</p>
+<ul>
+<li>Pegar</li>
+<li>Copiar al portapapeles</li>
+<li><strong>Guardar como</strong> submenú: Archivo de texto (.txt), Documento Word (.docx)</li>
+<li><strong>Mover a</strong> submenú: Principio, Final</li>
+<li>Fijar / Desfijar</li>
+<li>Establecer grupo</li>
+<li>Eliminar</li>
+</ul>
+<h2>Ajustes</h2>
+<p>Disponibles en menú NVDA &gt; Preferencias &gt; Opciones &gt; Historial del portapapeles:</p>
+<ul>
+<li><strong>Número máximo de entradas</strong>: Establece el límite (10–10.000, predeterminado 500). Al superarlo, se elimina la entrada no fijada más antigua.</li>
+<li><strong>Guardar historial entre sesiones</strong>: Mantener el historial entre reinicios (predeterminado: activado).</li>
+<li><strong>Anunciar cuando se copia nuevo texto</strong>: Verbalizar una vista previa cuando se detecta nuevo contenido (predeterminado: desactivado).</li>
+</ul>
+<h2>Compatibilidad</h2>
+<ul>
+<li>Versión mínima de NVDA: 2024.1</li>
+<li>Última versión probada: NVDA 2025.3</li>
+</ul>
+<h2>Licencia</h2>
+<p>Licencia Pública General GNU, versión 2.</p>
+</body>
+</html>

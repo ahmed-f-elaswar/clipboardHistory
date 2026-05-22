@@ -1,0 +1,342 @@
+# Clipboard History NVDA Add-on
+# Spanish translation
+# Copyright (C) 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: clipboardHistory 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Clipboard History"
+msgstr "Historial del portapapeles"
+
+msgid "Set Group"
+msgstr "Establecer grupo"
+
+msgid "Select an &existing group:"
+msgstr "Seleccionar un grupo &existente:"
+
+msgid "Or type a &new group name:"
+msgstr "O escribir un &nuevo nombre de grupo:"
+
+msgid "&Remove from group"
+msgstr "&Quitar del grupo"
+
+msgid "OK"
+msgstr "Aceptar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Manage Groups"
+msgstr "Administrar grupos"
+
+msgid "&Groups:"
+msgstr "&Grupos:"
+
+msgid "&New"
+msgstr "&Nuevo"
+
+msgid "&Rename"
+msgstr "&Renombrar"
+
+msgid "&Delete"
+msgstr "&Eliminar"
+
+msgid "&Close"
+msgstr "&Cerrar"
+
+msgid "Enter a name for the new group:"
+msgstr "Introduzca un nombre para el nuevo grupo:"
+
+msgid "New Group"
+msgstr "Nuevo grupo"
+
+msgid "Group name cannot be empty"
+msgstr "El nombre del grupo no puede estar vacío"
+
+msgid "Group created: %s"
+msgstr "Grupo creado: %s"
+
+msgid "Group '%s' already exists"
+msgstr "El grupo '%s' ya existe"
+
+msgid "Select a group first"
+msgstr "Seleccione un grupo primero"
+
+msgid "New name for '%s':"
+msgstr "Nuevo nombre para '%s':"
+
+msgid "Rename Group"
+msgstr "Renombrar grupo"
+
+msgid "Renamed to: %s"
+msgstr "Renombrado a: %s"
+
+msgid "Delete group '%s'? Clips in this group will be unassigned but not deleted."
+msgstr "¿Eliminar el grupo '%s'? Los elementos de este grupo se desasignarán pero no se eliminarán."
+
+msgid "Delete Group"
+msgstr "Eliminar grupo"
+
+msgid "Group '%s' deleted"
+msgstr "Grupo '%s' eliminado"
+
+msgid "&Search:"
+msgstr "&Buscar:"
+
+msgid "Gro&up:"
+msgstr "Gr&upo:"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "Clip"
+msgstr "Elemento"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Pinned"
+msgstr "Fijado"
+
+msgid "&Preview:"
+msgstr "&Vista previa:"
+
+msgid "&Paste"
+msgstr "&Pegar"
+
+msgid "&Copy to Clipboard"
+msgstr "&Copiar al portapapeles"
+
+msgid "Pi&n / Unpin"
+msgstr "Fi&jar / Desfijar"
+
+msgid "Set &Group"
+msgstr "Establecer &grupo"
+
+msgid "C&lear All"
+msgstr "&Borrar todo"
+
+msgid "Ne&w Group"
+msgstr "Nu&evo grupo"
+
+msgid "&Manage Groups"
+msgstr "&Administrar grupos"
+
+msgid "Cl&ose"
+msgstr "Ce&rrar"
+
+msgid "Pasted: "
+msgstr "Pegado: "
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "%d results found"
+msgstr "%d resultados encontrados"
+
+msgid "Copied to clipboard"
+msgstr "Copiado al portapapeles"
+
+msgid "%d items copied to clipboard"
+msgstr "%d elementos copiados al portapapeles"
+
+msgid "Unpinned"
+msgstr "Desfijado"
+
+msgid "%d items toggled"
+msgstr "%d elementos alternados"
+
+msgid "%d item(s) added to group: %s"
+msgstr "%d elemento(s) añadido(s) al grupo: %s"
+
+msgid "%d item(s) removed from group"
+msgstr "%d elemento(s) quitado(s) del grupo"
+
+msgid "Deleted"
+msgstr "Eliminado"
+
+msgid "%d items deleted"
+msgstr "%d elementos eliminados"
+
+msgid "Are you sure you want to clear all clipboard history? Pinned items will also be removed."
+msgstr "¿Está seguro de que desea borrar todo el historial del portapapeles? Los elementos fijados también se eliminarán."
+
+msgid "Clear Clipboard History"
+msgstr "Borrar historial del portapapeles"
+
+msgid "History cleared"
+msgstr "Historial borrado"
+
+msgid "Paste"
+msgstr "Pegar"
+
+msgid "Copy to Clipboard"
+msgstr "Copiar al portapapeles"
+
+msgid "Text File (.txt)..."
+msgstr "Archivo de texto (.txt)..."
+
+msgid "Word Document (.docx)..."
+msgstr "Documento de Word (.docx)..."
+
+msgid "Save As"
+msgstr "Guardar como"
+
+msgid "Top"
+msgstr "Arriba"
+
+msgid "Bottom"
+msgstr "Abajo"
+
+msgid "Move To"
+msgstr "Mover a"
+
+msgid "Unpin"
+msgstr "Desfijar"
+
+msgid "Pin"
+msgstr "Fijar"
+
+msgid "Set Group"
+msgstr "Establecer grupo"
+
+msgid "Delete"
+msgstr "Eliminar"
+
+msgid "Save as Text File"
+msgstr "Guardar como archivo de texto"
+
+msgid "Text files (*.txt)|*.txt"
+msgstr "Archivos de texto (*.txt)|*.txt"
+
+msgid "Saved as text file"
+msgstr "Guardado como archivo de texto"
+
+msgid "Failed to save file"
+msgstr "Error al guardar el archivo"
+
+msgid "Save as Word Document"
+msgstr "Guardar como documento de Word"
+
+msgid "Word documents (*.docx)|*.docx"
+msgstr "Documentos de Word (*.docx)|*.docx"
+
+msgid "Saved as Word document"
+msgstr "Guardado como documento de Word"
+
+msgid "Failed to save Word document"
+msgstr "Error al guardar el documento de Word"
+
+msgid "top"
+msgstr "arriba"
+
+msgid "bottom"
+msgstr "abajo"
+
+msgid "Moved to %s"
+msgstr "Movido a %s"
+
+msgid "&Maximum number of history entries:"
+msgstr "Número &máximo de entradas del historial:"
+
+msgid "&Save history between NVDA sessions"
+msgstr "&Guardar historial entre sesiones de NVDA"
+
+msgid "&Announce when new text is copied"
+msgstr "&Anunciar cuando se copie un nuevo texto"
+
+msgid "Clipboard: %s"
+msgstr "Portapapeles: %s"
+
+msgid "Show the clipboard history dialog to browse, search and paste previous clipboard entries"
+msgstr "Mostrar el diálogo del historial del portapapeles para explorar, buscar y pegar entradas anteriores"
+
+msgid "Clipboard history is empty"
+msgstr "El historial del portapapeles está vacío"
+
+msgid "Navigate to the previous item in clipboard history and announce it"
+msgstr "Navegar al elemento anterior en el historial del portapapeles y anunciarlo"
+
+msgid "End of clipboard history"
+msgstr "Fin del historial del portapapeles"
+
+msgid "%d of %d: %s"
+msgstr "%d de %d: %s"
+
+msgid "Navigate to the next item in clipboard history and announce it"
+msgstr "Navegar al siguiente elemento en el historial del portapapeles y anunciarlo"
+
+msgid "Beginning of clipboard history"
+msgstr "Inicio del historial del portapapeles"
+
+msgid "Paste the currently navigated clipboard history entry"
+msgstr "Pegar la entrada del historial del portapapeles actualmente seleccionada"
+
+msgid "Failed to paste"
+msgstr "Error al pegar"
+
+msgid "Copy the currently navigated clipboard history entry to the clipboard without pasting"
+msgstr "Copiar la entrada del historial actualmente seleccionada al portapapeles sin pegar"
+
+msgid "Failed to copy"
+msgstr "Error al copiar"
+
+msgid "Delete the currently navigated clipboard history entry"
+msgstr "Eliminar la entrada del historial del portapapeles actualmente seleccionada"
+
+msgid "Pin or unpin the currently navigated clipboard history entry"
+msgstr "Fijar o desfijar la entrada del historial del portapapeles actualmente seleccionada"
+
+msgid "Clear all unpinned entries from clipboard history"
+msgstr "Borrar todas las entradas no fijadas del historial del portapapeles"
+
+msgid "Clipboard history is already empty"
+msgstr "El historial del portapapeles ya está vacío"
+
+msgid "Clipboard history cleared. Pinned items kept."
+msgstr "Historial del portapapeles borrado. Los elementos fijados se conservan."
+
+msgid "Announce the current clipboard content"
+msgstr "Anunciar el contenido actual del portapapeles"
+
+msgid "Clipboard is empty"
+msgstr "El portapapeles está vacío"
+
+msgid "Set or change the group for the currently navigated clipboard entry"
+msgstr "Establecer o cambiar el grupo para la entrada actualmente seleccionada"
+
+msgid "Added to group: %s"
+msgstr "Añadido al grupo: %s"
+
+msgid "Removed from group"
+msgstr "Quitado del grupo"
+
+msgid "Append selected text to the latest clipboard entry"
+msgstr "Añadir el texto seleccionado a la última entrada del portapapeles"
+
+msgid "No text selected"
+msgstr "No hay texto seleccionado"
+
+msgid "Appended"
+msgstr "Añadido"
+
+msgid "Files and Folders"
+msgstr "Archivos y carpetas"
+
+msgid "Links"
+msgstr "Enlaces"
+
+msgid "Emails"
+msgstr "Correos electrónicos"
+
+msgid "%d files: %s"
+msgstr "%d archivos: %s"

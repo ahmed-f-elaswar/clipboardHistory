@@ -1,0 +1,342 @@
+# Clipboard History NVDA Add-on
+# Arabic translation
+# Copyright (C) 2025
+msgid ""
+msgstr ""
+"Project-Id-Version: clipboardHistory 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Clipboard History"
+msgstr "سجل الحافظة"
+
+msgid "Set Group"
+msgstr "تعيين المجموعة"
+
+msgid "Select an &existing group:"
+msgstr "اختر مجموعة &موجودة:"
+
+msgid "Or type a &new group name:"
+msgstr "أو اكتب اسم مجموعة &جديدة:"
+
+msgid "&Remove from group"
+msgstr "إ&زالة من المجموعة"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Manage Groups"
+msgstr "إدارة المجموعات"
+
+msgid "&Groups:"
+msgstr "الم&جموعات:"
+
+msgid "&New"
+msgstr "&جديد"
+
+msgid "&Rename"
+msgstr "إ&عادة تسمية"
+
+msgid "&Delete"
+msgstr "&حذف"
+
+msgid "&Close"
+msgstr "إ&غلاق"
+
+msgid "Enter a name for the new group:"
+msgstr "أدخل اسمًا للمجموعة الجديدة:"
+
+msgid "New Group"
+msgstr "مجموعة جديدة"
+
+msgid "Group name cannot be empty"
+msgstr "لا يمكن أن يكون اسم المجموعة فارغًا"
+
+msgid "Group created: %s"
+msgstr "تم إنشاء المجموعة: %s"
+
+msgid "Group '%s' already exists"
+msgstr "المجموعة '%s' موجودة بالفعل"
+
+msgid "Select a group first"
+msgstr "اختر مجموعة أولاً"
+
+msgid "New name for '%s':"
+msgstr "الاسم الجديد لـ '%s':"
+
+msgid "Rename Group"
+msgstr "إعادة تسمية المجموعة"
+
+msgid "Renamed to: %s"
+msgstr "تمت إعادة التسمية إلى: %s"
+
+msgid "Delete group '%s'? Clips in this group will be unassigned but not deleted."
+msgstr "حذف المجموعة '%s'؟ سيتم إلغاء تعيين العناصر في هذه المجموعة ولكن لن يتم حذفها."
+
+msgid "Delete Group"
+msgstr "حذف المجموعة"
+
+msgid "Group '%s' deleted"
+msgstr "تم حذف المجموعة '%s'"
+
+msgid "&Search:"
+msgstr "ب&حث:"
+
+msgid "Gro&up:"
+msgstr "المج&موعة:"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Clip"
+msgstr "العنصر"
+
+msgid "Group"
+msgstr "المجموعة"
+
+msgid "Pinned"
+msgstr "مثبّت"
+
+msgid "&Preview:"
+msgstr "م&عاينة:"
+
+msgid "&Paste"
+msgstr "ل&صق"
+
+msgid "&Copy to Clipboard"
+msgstr "&نسخ إلى الحافظة"
+
+msgid "Pi&n / Unpin"
+msgstr "ت&ثبيت / إلغاء التثبيت"
+
+msgid "Set &Group"
+msgstr "تعيين الم&جموعة"
+
+msgid "C&lear All"
+msgstr "م&سح الكل"
+
+msgid "Ne&w Group"
+msgstr "مجمو&عة جديدة"
+
+msgid "&Manage Groups"
+msgstr "إ&دارة المجموعات"
+
+msgid "Cl&ose"
+msgstr "إ&غلاق"
+
+msgid "Pasted: "
+msgstr "تم اللصق: "
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "%d results found"
+msgstr "تم العثور على %d نتيجة"
+
+msgid "Copied to clipboard"
+msgstr "تم النسخ إلى الحافظة"
+
+msgid "%d items copied to clipboard"
+msgstr "تم نسخ %d عنصر إلى الحافظة"
+
+msgid "Unpinned"
+msgstr "غير مثبّت"
+
+msgid "%d items toggled"
+msgstr "تم تبديل %d عنصر"
+
+msgid "%d item(s) added to group: %s"
+msgstr "تمت إضافة %d عنصر إلى المجموعة: %s"
+
+msgid "%d item(s) removed from group"
+msgstr "تمت إزالة %d عنصر من المجموعة"
+
+msgid "Deleted"
+msgstr "تم الحذف"
+
+msgid "%d items deleted"
+msgstr "تم حذف %d عنصر"
+
+msgid "Are you sure you want to clear all clipboard history? Pinned items will also be removed."
+msgstr "هل أنت متأكد من مسح كل سجل الحافظة؟ سيتم إزالة العناصر المثبتة أيضًا."
+
+msgid "Clear Clipboard History"
+msgstr "مسح سجل الحافظة"
+
+msgid "History cleared"
+msgstr "تم مسح السجل"
+
+msgid "Paste"
+msgstr "لصق"
+
+msgid "Copy to Clipboard"
+msgstr "نسخ إلى الحافظة"
+
+msgid "Text File (.txt)..."
+msgstr "ملف نصي (.txt)..."
+
+msgid "Word Document (.docx)..."
+msgstr "مستند وورد (.docx)..."
+
+msgid "Save As"
+msgstr "حفظ باسم"
+
+msgid "Top"
+msgstr "الأعلى"
+
+msgid "Bottom"
+msgstr "الأسفل"
+
+msgid "Move To"
+msgstr "نقل إلى"
+
+msgid "Unpin"
+msgstr "إلغاء التثبيت"
+
+msgid "Pin"
+msgstr "تثبيت"
+
+msgid "Set Group"
+msgstr "تعيين المجموعة"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Save as Text File"
+msgstr "حفظ كملف نصي"
+
+msgid "Text files (*.txt)|*.txt"
+msgstr "ملفات نصية (*.txt)|*.txt"
+
+msgid "Saved as text file"
+msgstr "تم الحفظ كملف نصي"
+
+msgid "Failed to save file"
+msgstr "فشل حفظ الملف"
+
+msgid "Save as Word Document"
+msgstr "حفظ كمستند وورد"
+
+msgid "Word documents (*.docx)|*.docx"
+msgstr "مستندات وورد (*.docx)|*.docx"
+
+msgid "Saved as Word document"
+msgstr "تم الحفظ كمستند وورد"
+
+msgid "Failed to save Word document"
+msgstr "فشل حفظ مستند وورد"
+
+msgid "top"
+msgstr "الأعلى"
+
+msgid "bottom"
+msgstr "الأسفل"
+
+msgid "Moved to %s"
+msgstr "تم النقل إلى %s"
+
+msgid "&Maximum number of history entries:"
+msgstr "الحد الأ&قصى لعدد عناصر السجل:"
+
+msgid "&Save history between NVDA sessions"
+msgstr "ح&فظ السجل بين جلسات NVDA"
+
+msgid "&Announce when new text is copied"
+msgstr "الإ&علان عند نسخ نص جديد"
+
+msgid "Clipboard: %s"
+msgstr "الحافظة: %s"
+
+msgid "Show the clipboard history dialog to browse, search and paste previous clipboard entries"
+msgstr "عرض مربع حوار سجل الحافظة لتصفح والبحث ولصق العناصر السابقة"
+
+msgid "Clipboard history is empty"
+msgstr "سجل الحافظة فارغ"
+
+msgid "Navigate to the previous item in clipboard history and announce it"
+msgstr "الانتقال إلى العنصر السابق في سجل الحافظة والإعلان عنه"
+
+msgid "End of clipboard history"
+msgstr "نهاية سجل الحافظة"
+
+msgid "%d of %d: %s"
+msgstr "%d من %d: %s"
+
+msgid "Navigate to the next item in clipboard history and announce it"
+msgstr "الانتقال إلى العنصر التالي في سجل الحافظة والإعلان عنه"
+
+msgid "Beginning of clipboard history"
+msgstr "بداية سجل الحافظة"
+
+msgid "Paste the currently navigated clipboard history entry"
+msgstr "لصق عنصر سجل الحافظة المحدد حاليًا"
+
+msgid "Failed to paste"
+msgstr "فشل اللصق"
+
+msgid "Copy the currently navigated clipboard history entry to the clipboard without pasting"
+msgstr "نسخ عنصر سجل الحافظة المحدد حاليًا إلى الحافظة بدون لصق"
+
+msgid "Failed to copy"
+msgstr "فشل النسخ"
+
+msgid "Delete the currently navigated clipboard history entry"
+msgstr "حذف عنصر سجل الحافظة المحدد حاليًا"
+
+msgid "Pin or unpin the currently navigated clipboard history entry"
+msgstr "تثبيت أو إلغاء تثبيت عنصر سجل الحافظة المحدد حاليًا"
+
+msgid "Clear all unpinned entries from clipboard history"
+msgstr "مسح جميع العناصر غير المثبتة من سجل الحافظة"
+
+msgid "Clipboard history is already empty"
+msgstr "سجل الحافظة فارغ بالفعل"
+
+msgid "Clipboard history cleared. Pinned items kept."
+msgstr "تم مسح سجل الحافظة. تم الاحتفاظ بالعناصر المثبتة."
+
+msgid "Announce the current clipboard content"
+msgstr "الإعلان عن محتوى الحافظة الحالي"
+
+msgid "Clipboard is empty"
+msgstr "الحافظة فارغة"
+
+msgid "Set or change the group for the currently navigated clipboard entry"
+msgstr "تعيين أو تغيير المجموعة لعنصر سجل الحافظة المحدد حاليًا"
+
+msgid "Added to group: %s"
+msgstr "تمت الإضافة إلى المجموعة: %s"
+
+msgid "Removed from group"
+msgstr "تمت الإزالة من المجموعة"
+
+msgid "Append selected text to the latest clipboard entry"
+msgstr "إلحاق النص المحدد بأحدث عنصر في الحافظة"
+
+msgid "No text selected"
+msgstr "لم يتم تحديد نص"
+
+msgid "Appended"
+msgstr "تم الإلحاق"
+
+msgid "Files and Folders"
+msgstr "ملفات ومجلدات"
+
+msgid "Links"
+msgstr "روابط"
+
+msgid "Emails"
+msgstr "بريد إلكتروني"
+
+msgid "%d files: %s"
+msgstr "%d ملفات: %s"

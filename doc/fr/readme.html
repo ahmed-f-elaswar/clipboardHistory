@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clipboard History Manager</title>
+</head>
+<body>
+<h1>Gestionnaire d'historique du presse-papiers</h1>
+<p>Un gestionnaire d'historique du presse-papiers pour NVDA inspiré de Ditto.</p>
+<p>Garde une trace de tout ce que vous copiez — texte, fichiers, liens et e-mails — avec une surveillance instantanée du presse-papiers basée sur les événements.</p>
+<h2>Fonctionnalités</h2>
+<ul>
+<li><strong>Surveillance instantanée du presse-papiers</strong> utilisant l'écouteur de presse-papiers Windows (basé sur les événements, sans interrogation périodique).</li>
+<li><strong>Support des fichiers</strong> : Les fichiers copiés dans l'Explorateur apparaissent dans l'historique et sont collés comme de vrais fichiers (format CF_HDROP).</li>
+<li><strong>Regroupement automatique</strong> : Les entrées sont automatiquement classées en Fichiers et dossiers, Liens ou E-mails.</li>
+<li><strong>Recherche et filtrage</strong> : Recherche en texte intégral et filtre par groupe dans la boîte de dialogue.</li>
+<li><strong>Épingler les entrées importantes</strong> pour qu'elles ne soient jamais supprimées lorsque la limite est atteinte.</li>
+<li><strong>Sélection multiple et collage</strong> : Sélectionnez plusieurs entrées avec Ctrl+Espace et collez dans l'ordre de sélection.</li>
+<li><strong>Ajouter au presse-papiers</strong> : Ajoutez le texte sélectionné au contenu actuel du presse-papiers.</li>
+<li><strong>Réordonner les entrées</strong> : Déplacez les entrées vers le haut/bas avec Shift+Flèches, ou vers le haut/bas via le menu contextuel.</li>
+<li><strong>Sauvegarder les entrées</strong> : Enregistrez n'importe quelle entrée en fichier texte (.txt) ou document Word (.docx) depuis le menu contextuel.</li>
+<li><strong>Indicateur de collage</strong> : Les entrées qui ont été collées sont marquées par "Pasted:" dans la liste.</li>
+<li><strong>Collage combiné</strong> : Lorsque plusieurs entrées sont collées ensemble, le texte combiné est également enregistré comme nouvelle entrée.</li>
+<li><strong>Historique persistant</strong> : L'historique est sauvegardé entre les sessions NVDA (configurable).</li>
+<li><strong>Groupes personnalisés</strong> : Créez et gérez des groupes personnalisés pour organiser les entrées.</li>
+<li><strong>Configurable</strong> : Panneau de paramètres dans les Préférences NVDA pour le nombre maximum d'entrées, la persistance et les annonces.</li>
+</ul>
+<h2>Raccourcis clavier globaux</h2>
+<table>
+<thead>
+<tr>
+<th>Raccourci</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVDA+A</td>
+<td>Ouvrir la boîte de dialogue de l'historique</td>
+</tr>
+<tr>
+<td>NVDA+C</td>
+<td>Annoncer le contenu actuel du presse-papiers</td>
+</tr>
+<tr>
+<td>NVDA+Shift+A</td>
+<td>Ajouter le texte sélectionné à la dernière entrée</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Flèche haut</td>
+<td>Naviguer vers l'entrée précédente</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Flèche bas</td>
+<td>Naviguer vers l'entrée suivante</td>
+</tr>
+<tr>
+<td>NVDA+Alt+V</td>
+<td>Coller l'entrée actuellement sélectionnée</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Entrée</td>
+<td>Copier l'entrée dans le presse-papiers</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Suppr</td>
+<td>Supprimer l'entrée actuellement sélectionnée</td>
+</tr>
+<tr>
+<td>NVDA+Alt+P</td>
+<td>Épingler/désépingler l'entrée</td>
+</tr>
+<tr>
+<td>NVDA+Alt+X</td>
+<td>Effacer tout l'historique</td>
+</tr>
+<tr>
+<td>NVDA+Alt+G</td>
+<td>Définir le groupe de l'entrée</td>
+</tr>
+</tbody>
+</table>
+<h2>Raccourcis clavier dans la boîte de dialogue</h2>
+<p>Lorsque la boîte de dialogue est ouverte :</p>
+<table>
+<thead>
+<tr>
+<th>Raccourci</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entrée</td>
+<td>Coller l'entrée/les entrées sélectionnées</td>
+</tr>
+<tr>
+<td>Ctrl+Espace</td>
+<td>Basculer la sélection multiple (respecte l'ordre)</td>
+</tr>
+<tr>
+<td>Suppr</td>
+<td>Supprimer l'entrée/les entrées sélectionnées</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Épingler/désépingler</td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>Définir le groupe</td>
+</tr>
+<tr>
+<td>Shift+Flèche haut</td>
+<td>Déplacer l'entrée vers le haut</td>
+</tr>
+<tr>
+<td>Shift+Flèche bas</td>
+<td>Déplacer l'entrée vers le bas</td>
+</tr>
+<tr>
+<td>Touche Applications</td>
+<td>Ouvrir le menu contextuel</td>
+</tr>
+<tr>
+<td>Alt+S</td>
+<td>Focus sur le champ de recherche</td>
+</tr>
+<tr>
+<td>Alt+U</td>
+<td>Focus sur le filtre de groupe</td>
+</tr>
+<tr>
+<td>Alt+G</td>
+<td>Bouton définir le groupe</td>
+</tr>
+<tr>
+<td>Échap</td>
+<td>Fermer la boîte de dialogue</td>
+</tr>
+</tbody>
+</table>
+<h2>Options du menu contextuel</h2>
+<p>Clic droit ou touche Applications sur n'importe quelle entrée :</p>
+<ul>
+<li>Coller</li>
+<li>Copier dans le presse-papiers</li>
+<li><strong>Enregistrer sous</strong> sous-menu : Fichier texte (.txt), Document Word (.docx)</li>
+<li><strong>Déplacer vers</strong> sous-menu : Haut, Bas</li>
+<li>Épingler / Désépingler</li>
+<li>Définir le groupe</li>
+<li>Supprimer</li>
+</ul>
+<h2>Paramètres</h2>
+<p>Disponibles dans menu NVDA &gt; Préférences &gt; Paramètres &gt; Historique du presse-papiers :</p>
+<ul>
+<li><strong>Nombre maximum d'entrées</strong> : Définir la limite (10–10 000, par défaut 500). Au-delà, l'entrée non épinglée la plus ancienne est supprimée.</li>
+<li><strong>Sauvegarder l'historique entre les sessions</strong> : Conserver l'historique au redémarrage (par défaut : activé).</li>
+<li><strong>Annoncer quand un nouveau texte est copié</strong> : Énoncer un aperçu lorsqu'un nouveau contenu est détecté (par défaut : désactivé).</li>
+</ul>
+<h2>Compatibilité</h2>
+<ul>
+<li>Version minimum de NVDA : 2024.1</li>
+<li>Dernière version testée : NVDA 2025.3</li>
+</ul>
+<h2>Licence</h2>
+<p>Licence publique générale GNU, version 2.</p>
+</body>
+</html>

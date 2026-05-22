@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Clipboard History Manager</title>
+</head>
+<body>
+<h1>Clipboard History Manager</h1>
+<p>A Ditto-inspired clipboard history manager for NVDA.</p>
+<p>Keeps track of everything you copy — text, files, links, and emails — with instant event-driven clipboard monitoring.</p>
+<h2>Features</h2>
+<ul>
+<li><strong>Instant clipboard monitoring</strong> using Windows clipboard listener (event-driven, no polling).</li>
+<li><strong>File support</strong>: Files copied in Explorer appear in history and paste back as actual files (CF_HDROP format).</li>
+<li><strong>Auto-grouping</strong>: Entries are automatically categorized as Files and Folders, Links, or Emails.</li>
+<li><strong>Search and filter</strong>: Full-text search and group filter in the history dialog.</li>
+<li><strong>Pin important entries</strong> so they are never removed when the history limit is reached.</li>
+<li><strong>Multi-select and paste</strong>: Select multiple entries with Ctrl+Space and paste in the order you selected them.</li>
+<li><strong>Append to clipboard</strong>: Append selected text to the current clipboard content.</li>
+<li><strong>Reorder entries</strong>: Move entries up/down with Shift+Arrow keys, or to top/bottom via context menu.</li>
+<li><strong>Save entries</strong>: Save any entry as a Text (.txt) or Word (.docx) file from the context menu.</li>
+<li><strong>Pasted indicator</strong>: Entries that have been pasted are marked with "Pasted:" in the list.</li>
+<li><strong>Combined paste</strong>: When multiple entries are pasted together, the combined text is also saved as a new entry.</li>
+<li><strong>Persistent history</strong>: History is saved between NVDA sessions (configurable).</li>
+<li><strong>Custom groups</strong>: Create and manage custom groups for organizing entries.</li>
+<li><strong>Configurable</strong>: Settings panel in NVDA Preferences for max entries, persistence, and announcements.</li>
+</ul>
+<h2>Global Keyboard Shortcuts</h2>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NVDA+A</td>
+<td>Open clipboard history dialog</td>
+</tr>
+<tr>
+<td>NVDA+C</td>
+<td>Announce current clipboard content</td>
+</tr>
+<tr>
+<td>NVDA+Shift+A</td>
+<td>Append selected text to latest clipboard entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Up Arrow</td>
+<td>Navigate to previous history entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Down Arrow</td>
+<td>Navigate to next history entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+V</td>
+<td>Paste the currently navigated entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Enter</td>
+<td>Copy the currently navigated entry to clipboard</td>
+</tr>
+<tr>
+<td>NVDA+Alt+Delete</td>
+<td>Delete the currently navigated entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+P</td>
+<td>Pin/unpin the currently navigated entry</td>
+</tr>
+<tr>
+<td>NVDA+Alt+X</td>
+<td>Clear all clipboard history</td>
+</tr>
+<tr>
+<td>NVDA+Alt+G</td>
+<td>Set group for the currently navigated entry</td>
+</tr>
+</tbody>
+</table>
+<h2>Dialog Keyboard Shortcuts</h2>
+<p>When the Clipboard History dialog is open:</p>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enter</td>
+<td>Paste selected entry/entries</td>
+</tr>
+<tr>
+<td>Ctrl+Space</td>
+<td>Toggle multi-select (selection-order aware)</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Delete selected entry/entries</td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Pin/unpin entry</td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>Set group</td>
+</tr>
+<tr>
+<td>Shift+Up Arrow</td>
+<td>Move entry up in the list</td>
+</tr>
+<tr>
+<td>Shift+Down Arrow</td>
+<td>Move entry down in the list</td>
+</tr>
+<tr>
+<td>Applications key</td>
+<td>Open context menu</td>
+</tr>
+<tr>
+<td>Alt+S</td>
+<td>Focus search field</td>
+</tr>
+<tr>
+<td>Alt+U</td>
+<td>Focus group filter</td>
+</tr>
+<tr>
+<td>Alt+G</td>
+<td>Set group button</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>Close dialog</td>
+</tr>
+</tbody>
+</table>
+<h2>Context Menu Options</h2>
+<p>Right-click or press the Applications key on any entry:</p>
+<ul>
+<li>Paste</li>
+<li>Copy to Clipboard</li>
+<li><strong>Save As</strong> submenu: Text File (.txt), Word Document (.docx)</li>
+<li><strong>Move To</strong> submenu: Top, Bottom</li>
+<li>Pin / Unpin</li>
+<li>Set Group</li>
+<li>Delete</li>
+</ul>
+<h2>Settings</h2>
+<p>Available in NVDA menu &gt; Preferences &gt; Settings &gt; Clipboard History:</p>
+<ul>
+<li><strong>Maximum number of history entries</strong>: Set the limit (10–10,000, default 500). When exceeded, the oldest unpinned entry is removed.</li>
+<li><strong>Save history between NVDA sessions</strong>: Keep history persistent across restarts (default: on).</li>
+<li><strong>Announce when new text is copied</strong>: Speak a preview when new content is detected (default: off).</li>
+</ul>
+<h2>Compatibility</h2>
+<ul>
+<li>Minimum NVDA version: 2024.1</li>
+<li>Last tested: NVDA 2025.3</li>
+</ul>
+<h2>License</h2>
+<p>GNU General Public License, version 2.</p>
+</body>
+</html>
