@@ -308,6 +308,12 @@ msgstr "Historial del portapapeles borrado. Los elementos fijados se conservan."
 msgid "Announce the current clipboard content"
 msgstr "Anunciar el contenido actual del portapapeles"
 
+msgid "Announce the current clipboard content. Press twice to show in a browsable message"
+msgstr "Anunciar el contenido actual del portapapeles. Pulsar dos veces para mostrarlo en un mensaje navegable"
+
+msgid "Clipboard Content"
+msgstr "Contenido del portapapeles"
+
 msgid "Clipboard is empty"
 msgstr "El portapapeles está vacío"
 
@@ -340,3 +346,21 @@ msgstr "Correos electrónicos"
 
 msgid "%d files: %s"
 msgstr "%d archivos: %s"
+
+msgid "&Edit"
+msgstr "&Editar"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit Clip"
+msgstr "Editar elemento"
+
+msgid "Edit the clip &text:"
+msgstr "Editar el &texto del elemento:"
+
+msgid "Clip updated"
+msgstr "Elemento actualizado"
+
+msgid "Failed to update clip"
+msgstr "Error al actualizar el elemento"

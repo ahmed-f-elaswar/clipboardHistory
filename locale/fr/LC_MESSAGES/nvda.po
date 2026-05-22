@@ -308,6 +308,12 @@ msgstr "Historique du presse-papiers effacé. Les éléments épinglés sont con
 msgid "Announce the current clipboard content"
 msgstr "Annoncer le contenu actuel du presse-papiers"
 
+msgid "Announce the current clipboard content. Press twice to show in a browsable message"
+msgstr "Annoncer le contenu actuel du presse-papiers. Appuyez deux fois pour l'afficher dans un message navigable"
+
+msgid "Clipboard Content"
+msgstr "Contenu du presse-papiers"
+
 msgid "Clipboard is empty"
 msgstr "Le presse-papiers est vide"
 
@@ -340,3 +346,21 @@ msgstr "E-mails"
 
 msgid "%d files: %s"
 msgstr "%d fichiers : %s"
+
+msgid "&Edit"
+msgstr "&Modifier"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "Edit Clip"
+msgstr "Modifier l'élément"
+
+msgid "Edit the clip &text:"
+msgstr "Modifier le &texte de l'élément :"
+
+msgid "Clip updated"
+msgstr "Élément mis à jour"
+
+msgid "Failed to update clip"
+msgstr "Échec de la mise à jour de l'élément"

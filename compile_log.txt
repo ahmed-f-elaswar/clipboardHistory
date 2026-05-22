@@ -1,0 +1,9 @@
+Locale dir: D:\code\clipboardHistory-addon\locale
+Exists: True
+Processing: D:\code\clipboardHistory-addon\locale\ar\LC_MESSAGES\nvda.po
+OK: D:\code\clipboardHistory-addon\locale\ar\LC_MESSAGES\nvda.po -> D:\code\clipboardHistory-addon\locale\ar\LC_MESSAGES\nvda.mo (118 strings)
+Processing: D:\code\clipboardHistory-addon\locale\es\LC_MESSAGES\nvda.po
+OK: D:\code\clipboardHistory-addon\locale\es\LC_MESSAGES\nvda.po -> D:\code\clipboardHistory-addon\locale\es\LC_MESSAGES\nvda.mo (118 strings)
+Processing: D:\code\clipboardHistory-addon\locale\fr\LC_MESSAGES\nvda.po
+OK: D:\code\clipboardHistory-addon\locale\fr\LC_MESSAGES\nvda.po -> D:\code\clipboardHistory-addon\locale\fr\LC_MESSAGES\nvda.mo (118 strings)
+All done!

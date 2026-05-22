@@ -19,6 +19,8 @@ Realiza un seguimiento de todo lo que copias — texto, archivos, enlaces y corr
 * **Pegado combinado**: Cuando se pegan múltiples entradas juntas, el texto combinado también se guarda como nueva entrada.
 * **Historial persistente**: El historial se guarda entre sesiones de NVDA (configurable).
 * **Grupos personalizados**: Crea y gestiona grupos personalizados para organizar las entradas.
+* **Editor de clips**: Crea nuevos clips desde cero o edita entradas existentes con un editor de texto integrado, con advertencia de cambios sin guardar.
+* **Seleccionar todo**: Pulsa Ctrl+A en el diálogo del historial para seleccionar todas las entradas.
 * **Configurable**: Panel de ajustes en Preferencias de NVDA para el máximo de entradas, persistencia y anuncios.
 
 ## Atajos de teclado globales
@@ -35,6 +37,7 @@ Realiza un seguimiento de todo lo que copias — texto, archivos, enlaces y corr
 | NVDA+Alt+Suprimir | Eliminar la entrada seleccionada actualmente |
 | NVDA+Alt+P | Fijar/desfijar la entrada |
 | NVDA+Alt+X | Borrar todo el historial |
+| NVDA+Shift+C | Abrir editor para escribir un nuevo clip |
 | NVDA+Alt+G | Establecer grupo para la entrada |
 
 ## Atajos de teclado en el diálogo
@@ -46,6 +49,8 @@ Cuando el diálogo del historial está abierto:
 | Intro | Pegar la(s) entrada(s) seleccionada(s) |
 | Ctrl+Espacio | Alternar selección múltiple (respeta el orden) |
 | Suprimir | Eliminar la(s) entrada(s) seleccionada(s) |
+| Ctrl+A | Seleccionar todas las entradas |
+| Ctrl+E | Editar la entrada seleccionada |
 | Ctrl+P | Fijar/desfijar |
 | Ctrl+G | Establecer grupo |
 | Shift+Flecha arriba | Mover entrada hacia arriba |
@@ -62,6 +67,7 @@ Clic derecho o tecla Aplicaciones en cualquier entrada:
 
 * Pegar
 * Copiar al portapapeles
+* Editar
 * **Guardar como** submenú: Archivo de texto (.txt), Documento Word (.docx)
 * **Mover a** submenú: Principio, Final
 * Fijar / Desfijar

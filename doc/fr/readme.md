@@ -19,6 +19,8 @@ Garde une trace de tout ce que vous copiez — texte, fichiers, liens et e-mails
 * **Collage combiné** : Lorsque plusieurs entrées sont collées ensemble, le texte combiné est également enregistré comme nouvelle entrée.
 * **Historique persistant** : L'historique est sauvegardé entre les sessions NVDA (configurable).
 * **Groupes personnalisés** : Créez et gérez des groupes personnalisés pour organiser les entrées.
+* **Éditeur de clips** : Créez de nouveaux clips à partir de zéro ou modifiez les entrées existantes avec un éditeur de texte intégré, avec avertissement des modifications non enregistrées.
+* **Sélectionner tout** : Appuyez sur Ctrl+A dans la boîte de dialogue pour sélectionner toutes les entrées.
 * **Configurable** : Panneau de paramètres dans les Préférences NVDA pour le nombre maximum d'entrées, la persistance et les annonces.
 
 ## Raccourcis clavier globaux
@@ -35,6 +37,7 @@ Garde une trace de tout ce que vous copiez — texte, fichiers, liens et e-mails
 | NVDA+Alt+Suppr | Supprimer l'entrée actuellement sélectionnée |
 | NVDA+Alt+P | Épingler/désépingler l'entrée |
 | NVDA+Alt+X | Effacer tout l'historique |
+| NVDA+Shift+C | Ouvrir l'éditeur pour écrire un nouveau clip |
 | NVDA+Alt+G | Définir le groupe de l'entrée |
 
 ## Raccourcis clavier dans la boîte de dialogue
@@ -46,6 +49,8 @@ Lorsque la boîte de dialogue est ouverte :
 | Entrée | Coller l'entrée/les entrées sélectionnées |
 | Ctrl+Espace | Basculer la sélection multiple (respecte l'ordre) |
 | Suppr | Supprimer l'entrée/les entrées sélectionnées |
+| Ctrl+A | Sélectionner toutes les entrées |
+| Ctrl+E | Modifier l'entrée sélectionnée |
 | Ctrl+P | Épingler/désépingler |
 | Ctrl+G | Définir le groupe |
 | Shift+Flèche haut | Déplacer l'entrée vers le haut |
@@ -62,6 +67,7 @@ Clic droit ou touche Applications sur n'importe quelle entrée :
 
 * Coller
 * Copier dans le presse-papiers
+* Modifier
 * **Enregistrer sous** sous-menu : Fichier texte (.txt), Document Word (.docx)
 * **Déplacer vers** sous-menu : Haut, Bas
 * Épingler / Désépingler

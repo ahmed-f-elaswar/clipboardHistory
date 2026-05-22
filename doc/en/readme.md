@@ -19,6 +19,8 @@ Keeps track of everything you copy — text, files, links, and emails — with i
 * **Combined paste**: When multiple entries are pasted together, the combined text is also saved as a new entry.
 * **Persistent history**: History is saved between NVDA sessions (configurable).
 * **Custom groups**: Create and manage custom groups for organizing entries.
+* **Clip editor**: Create new clips from scratch or edit existing entries with a built-in text editor, complete with unsaved-changes warning.
+* **Select all**: Press Ctrl+A in the history dialog to select all entries at once.
 * **Configurable**: Settings panel in NVDA Preferences for max entries, persistence, and announcements.
 
 ## Global Keyboard Shortcuts
@@ -35,6 +37,7 @@ Keeps track of everything you copy — text, files, links, and emails — with i
 | NVDA+Alt+Delete | Delete the currently navigated entry |
 | NVDA+Alt+P | Pin/unpin the currently navigated entry |
 | NVDA+Alt+X | Clear all clipboard history |
+| NVDA+Shift+C | Open editor to write a new clip |
 | NVDA+Alt+G | Set group for the currently navigated entry |
 
 ## Dialog Keyboard Shortcuts
@@ -46,6 +49,8 @@ When the Clipboard History dialog is open:
 | Enter | Paste selected entry/entries |
 | Ctrl+Space | Toggle multi-select (selection-order aware) |
 | Delete | Delete selected entry/entries |
+| Ctrl+A | Select all entries |
+| Ctrl+E | Edit selected entry |
 | Ctrl+P | Pin/unpin entry |
 | Ctrl+G | Set group |
 | Shift+Up Arrow | Move entry up in the list |
@@ -62,6 +67,7 @@ Right-click or press the Applications key on any entry:
 
 * Paste
 * Copy to Clipboard
+* Edit
 * **Save As** submenu: Text File (.txt), Word Document (.docx)
 * **Move To** submenu: Top, Bottom
 * Pin / Unpin

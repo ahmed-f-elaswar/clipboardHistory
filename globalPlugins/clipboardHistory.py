@@ -22,7 +22,7 @@ import gui
 import tones
 import ui
 import windowUtils
-from scriptHandler import script
+from scriptHandler import script, getLastScriptRepeatCount
 from logHandler import log
 from gui import guiHelper, nvdaControls
 from gui.settingsDialogs import NVDASettingsDialog, SettingsPanel
@@ -405,6 +405,21 @@ class ClipboardHistoryManager:
 					return True
 		return False
 
+	def update_text(self, entry_id, new_text):
+		"""Update the text of an entry. Returns True if updated."""
+		if not new_text or not new_text.strip():
+			return False
+		if len(new_text) > MAX_ENTRY_LENGTH:
+			new_text = new_text[:MAX_ENTRY_LENGTH]
+		with self._lock:
+			for entry in self._entries:
+				if entry.entry_id == entry_id:
+					entry.text = new_text
+					entry.group = self._detect_group(new_text)
+					self._save_history()
+					return True
+		return False
+
 	def get_groups(self):
 		"""Get a sorted list of all group names (registered + in-use)."""
 		with self._lock:
@@ -703,6 +718,72 @@ class ManageGroupsDialog(wx.Dialog):
 			self._refresh_list()
 
 
+class ClipEditorDialog(wx.Dialog):
+	"""Editor dialog for clip text with save, discard, and unsaved-changes warning."""
+
+	def __init__(self, parent, text, title=None):
+		super().__init__(parent, title=title or _("Edit Clip"), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
+		self._original_text = text
+		self._dirty = False
+
+		panel = wx.Panel(self)
+		sizer = wx.BoxSizer(wx.VERTICAL)
+
+		label = wx.StaticText(panel, label=_("Edit the clip &text:"))
+		sizer.Add(label, 0, wx.ALL, 5)
+
+		self._textCtrl = wx.TextCtrl(panel, style=wx.TE_MULTILINE | wx.TE_DONTWRAP | wx.TE_RICH2)
+		self._textCtrl.SetValue(text)
+		self._textCtrl.Bind(wx.EVT_TEXT, self._on_text_changed)
+		sizer.Add(self._textCtrl, 1, wx.EXPAND | wx.LEFT | wx.RIGHT, 5)
+
+		btnSizer = wx.BoxSizer(wx.HORIZONTAL)
+		saveBtn = wx.Button(panel, wx.ID_OK, label=_("&Save"))
+		saveBtn.SetDefault()
+		btnSizer.Add(saveBtn, 0, wx.RIGHT, 5)
+		discardBtn = wx.Button(panel, wx.ID_CANCEL, label=_("&Discard"))
+		btnSizer.Add(discardBtn, 0)
+		sizer.Add(btnSizer, 0, wx.ALL | wx.ALIGN_RIGHT, 5)
+
+		panel.SetSizer(sizer)
+		dlgSizer = wx.BoxSizer(wx.VERTICAL)
+		dlgSizer.Add(panel, 1, wx.EXPAND)
+		self.SetSizer(dlgSizer)
+		self.SetSize((600, 400))
+		self.CentreOnParent()
+
+		self.Bind(wx.EVT_CLOSE, self._on_close)
+		self.SetEscapeId(wx.ID_NONE)
+		self.Bind(wx.EVT_CHAR_HOOK, self._on_key)
+
+	def _on_key(self, event):
+		if event.GetKeyCode() == wx.WXK_ESCAPE:
+			self.Close()
+		else:
+			event.Skip()
+
+	def _on_text_changed(self, event):
+		self._dirty = self._textCtrl.GetValue() != self._original_text
+
+	def _on_close(self, event):
+		if self._dirty:
+			result = gui.messageBox(
+				_("You have unsaved changes. Do you want to save before closing?"),
+				_("Unsaved Changes"),
+				wx.YES_NO | wx.CANCEL | wx.ICON_WARNING,
+				self,
+			)
+			if result == wx.YES:
+				self.EndModal(wx.ID_OK)
+				return
+			elif result == wx.CANCEL:
+				return
+		self.EndModal(wx.ID_CANCEL)
+
+	def get_text(self):
+		return self._textCtrl.GetValue()
+
+
 class ClipboardHistoryDialog(wx.Dialog):
 	"""Main clipboard history browser dialog, similar to Ditto."""
 
@@ -734,23 +815,16 @@ class ClipboardHistoryDialog(wx.Dialog):
 		panel = wx.Panel(self)
 		sizer = wx.BoxSizer(wx.VERTICAL)
 
-		# Filter row: search + group filter
-		filterSizer = wx.BoxSizer(wx.HORIZONTAL)
+		# Search row
+		searchSizer = wx.BoxSizer(wx.HORIZONTAL)
 		searchLabel = wx.StaticText(panel, label=_("&Search:"))
-		filterSizer.Add(searchLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+		searchSizer.Add(searchLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
 		self._searchCtrl = wx.TextCtrl(panel, style=wx.TE_PROCESS_ENTER)
 		self._searchCtrl.Bind(wx.EVT_TEXT, self._on_filter_changed)
 		self._searchCtrl.Bind(wx.EVT_TEXT_ENTER, self._on_paste)
-		filterSizer.Add(self._searchCtrl, 1, wx.EXPAND | wx.RIGHT, 10)
+		searchSizer.Add(self._searchCtrl, 1, wx.EXPAND)
 
-		groupLabel = wx.StaticText(panel, label=_("Gro&up:"))
-		filterSizer.Add(groupLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
-		self._groupFilter = wx.Choice(panel, choices=[_("All")])
-		self._groupFilter.SetSelection(0)
-		self._groupFilter.Bind(wx.EVT_CHOICE, self._on_filter_changed)
-		filterSizer.Add(self._groupFilter, 0, wx.ALIGN_CENTER_VERTICAL)
-
-		sizer.Add(filterSizer, 0, wx.EXPAND | wx.ALL, 5)
+		sizer.Add(searchSizer, 0, wx.EXPAND | wx.ALL, 5)
 
 		# History list
 		self._listCtrl = wx.ListCtrl(panel, style=wx.LC_REPORT)
@@ -777,14 +851,13 @@ class ClipboardHistoryDialog(wx.Dialog):
 		# Buttons
 		buttonSizer = wx.BoxSizer(wx.HORIZONTAL)
 
-		self._pasteBtn = wx.Button(panel, label=_("&Paste"))
-		self._pasteBtn.SetDefault()
-		self._pasteBtn.Bind(wx.EVT_BUTTON, self._on_paste)
-		buttonSizer.Add(self._pasteBtn, 0, wx.RIGHT, 5)
-
 		self._copyBtn = wx.Button(panel, label=_("&Copy to Clipboard"))
 		self._copyBtn.Bind(wx.EVT_BUTTON, self._on_copy)
 		buttonSizer.Add(self._copyBtn, 0, wx.RIGHT, 5)
+
+		self._editBtn = wx.Button(panel, label=_("&Edit"))
+		self._editBtn.Bind(wx.EVT_BUTTON, self._on_edit)
+		buttonSizer.Add(self._editBtn, 0, wx.RIGHT, 5)
 
 		self._pinBtn = wx.Button(panel, label=_("Pi&n / Unpin"))
 		self._pinBtn.Bind(wx.EVT_BUTTON, self._on_toggle_pin)
@@ -793,10 +866,6 @@ class ClipboardHistoryDialog(wx.Dialog):
 		self._groupBtn = wx.Button(panel, label=_("Set &Group"))
 		self._groupBtn.Bind(wx.EVT_BUTTON, self._on_set_group)
 		buttonSizer.Add(self._groupBtn, 0, wx.RIGHT, 5)
-
-		self._deleteBtn = wx.Button(panel, label=_("&Delete"))
-		self._deleteBtn.Bind(wx.EVT_BUTTON, self._on_delete)
-		buttonSizer.Add(self._deleteBtn, 0, wx.RIGHT, 5)
 
 		self._clearBtn = wx.Button(panel, label=_("C&lear All"))
 		self._clearBtn.Bind(wx.EVT_BUTTON, self._on_clear_all)
@@ -808,11 +877,14 @@ class ClipboardHistoryDialog(wx.Dialog):
 
 		self._manageGroupsBtn = wx.Button(panel, label=_("&Manage Groups"))
 		self._manageGroupsBtn.Bind(wx.EVT_BUTTON, self._on_manage_groups)
-		buttonSizer.Add(self._manageGroupsBtn, 0, wx.RIGHT, 5)
+		buttonSizer.Add(self._manageGroupsBtn, 0, wx.RIGHT, 10)
 
-		closeBtn = wx.Button(panel, wx.ID_CLOSE, label=_("Cl&ose"))
-		closeBtn.Bind(wx.EVT_BUTTON, self._on_close)
-		buttonSizer.Add(closeBtn, 0)
+		groupLabel = wx.StaticText(panel, label=_("Gro&up:"))
+		buttonSizer.Add(groupLabel, 0, wx.ALIGN_CENTER_VERTICAL | wx.RIGHT, 5)
+		self._groupFilter = wx.Choice(panel, choices=[_("All")])
+		self._groupFilter.SetSelection(0)
+		self._groupFilter.Bind(wx.EVT_CHOICE, self._on_filter_changed)
+		buttonSizer.Add(self._groupFilter, 0, wx.ALIGN_CENTER_VERTICAL)
 
 		sizer.Add(buttonSizer, 0, wx.ALL | wx.ALIGN_RIGHT, 5)
 
@@ -821,7 +893,8 @@ class ClipboardHistoryDialog(wx.Dialog):
 		self.SetSizer(mainSizer)
 
 		self.Bind(wx.EVT_CLOSE, self._on_close)
-		self.SetEscapeId(wx.ID_CLOSE)
+		self.SetEscapeId(wx.ID_NONE)
+		self.Bind(wx.EVT_CHAR_HOOK, self._on_char_hook)
 
 	def _refresh_group_filter(self):
 		"""Refresh the group filter dropdown choices."""
@@ -981,6 +1054,23 @@ class ClipboardHistoryDialog(wx.Dialog):
 			else:
 				ui.message(_("%d items copied to clipboard") % count)
 
+	def _on_edit(self, event):
+		"""Edit the selected entry's text in a full editor."""
+		entry = self._get_selected_entry()
+		if not entry:
+			return
+		dlg = ClipEditorDialog(self, entry.text)
+		if dlg.ShowModal() == wx.ID_OK:
+			new_text = dlg.get_text()
+			if new_text != entry.text:
+				if self._history.update_text(entry.entry_id, new_text):
+					ui.message(_("Clip updated"))
+				else:
+					ui.message(_("Failed to update clip"))
+			query, group = self._get_current_filters()
+			self._populate_list(query, group)
+		dlg.Destroy()
+
 	def _on_toggle_pin(self, event):
 		entries = self._get_selected_entries()
 		if not entries:
@@ -1073,6 +1163,7 @@ class ClipboardHistoryDialog(wx.Dialog):
 		menu = wx.Menu()
 		paste_item = menu.Append(wx.ID_ANY, _("Paste"))
 		copy_item = menu.Append(wx.ID_ANY, _("Copy to Clipboard"))
+		edit_item = menu.Append(wx.ID_ANY, _("Edit"))
 		menu.AppendSeparator()
 
 		# Save as submenu
@@ -1094,6 +1185,7 @@ class ClipboardHistoryDialog(wx.Dialog):
 
 		self.Bind(wx.EVT_MENU, self._on_paste, paste_item)
 		self.Bind(wx.EVT_MENU, self._on_copy, copy_item)
+		self.Bind(wx.EVT_MENU, self._on_edit, edit_item)
 		self.Bind(wx.EVT_MENU, lambda e: self._save_as_text(entry), save_txt_item)
 		self.Bind(wx.EVT_MENU, lambda e: self._save_as_word(entry), save_doc_item)
 		self.Bind(wx.EVT_MENU, lambda e: self._move_to(entry, "top"), top_item)
@@ -1204,6 +1296,12 @@ class ClipboardHistoryDialog(wx.Dialog):
 			position_label = _("top") if position == "top" else _("bottom")
 			ui.message(_("Moved to %s") % position_label)
 
+	def _on_char_hook(self, event):
+		if event.GetKeyCode() == wx.WXK_ESCAPE:
+			self.Close()
+		else:
+			event.Skip()
+
 	def _on_close(self, event):
 		if self._on_destroy:
 			# Pass back the current group filter so it can be remembered
@@ -1215,10 +1313,15 @@ class ClipboardHistoryDialog(wx.Dialog):
 		keyCode = event.GetKeyCode()
 		if keyCode == wx.WXK_DELETE:
 			self._on_delete(event)
+		elif keyCode == ord("A") and event.ControlDown():
+			for i in range(self._listCtrl.GetItemCount()):
+				self._listCtrl.Select(i)
 		elif keyCode == ord("P") and event.ControlDown():
 			self._on_toggle_pin(event)
 		elif keyCode == ord("G") and event.ControlDown():
 			self._on_set_group(event)
+		elif keyCode == ord("E") and event.ControlDown():
+			self._on_edit(event)
 		elif keyCode == wx.WXK_UP and event.ShiftDown():
 			self._move_entry(-1)
 		elif keyCode == wx.WXK_DOWN and event.ShiftDown():
@@ -1628,7 +1731,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@script(
 		# Translators: Description of the command to announce current clipboard content
-		description=_("Announce the current clipboard content"),
+		description=_("Announce the current clipboard content. Press twice to show in a browsable message"),
 		gesture="kb:NVDA+c",
 	)
 	def script_announceClipboard(self, gesture):
@@ -1636,11 +1739,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			text = api.getClipData()
 		except Exception:
 			text = ""
-		if text:
+		if not text:
+			ui.message(_("Clipboard is empty"))
+			return
+		if getLastScriptRepeatCount() >= 1:
+			ui.browseableMessage(text, _("Clipboard Content"))
+		else:
 			preview = text[:200].replace("\n", " ")
 			ui.message(preview)
-		else:
-			ui.message(_("Clipboard is empty"))
 
 	@script(
 		# Translators: Description of the command to set or change the group for the navigated entry
@@ -1713,3 +1819,24 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._last_clip_text = combined
 		self._history.add(combined)
 		ui.message(_("Appended"))
+
+	@script(
+		# Translators: Description of the command to open a blank editor to create a new clip
+		description=_("Open an editor to write a new clip and save it to clipboard history"),
+		gesture="kb:NVDA+shift+c",
+	)
+	def script_newClip(self, gesture):
+		def _show():
+			gui.mainFrame.prePopup()
+			dlg = ClipEditorDialog(gui.mainFrame, "", title=_("New Clip"))
+			if dlg.ShowModal() == wx.ID_OK:
+				new_text = dlg.get_text()
+				if new_text and new_text.strip():
+					self._history.add(new_text)
+					api.copyToClip(new_text)
+					self._last_clip_text = new_text
+					ui.message(_("Clip saved"))
+			dlg.Destroy()
+			gui.mainFrame.postPopup()
+
+		wx.CallAfter(_show)
